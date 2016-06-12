@@ -1,0 +1,112 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+header, footer, main, section, nav, article, aside {
+	display: block;
+}
+
+header {
+	background: url('../images/header.gif') no-repeat;
+	margin: auto;
+	width: 1695px;
+	height: 233px;
+}
+
+main {
+	background: url('../images/main.gif') no-repeat;
+	width: 990px;
+	height: 1521px;
+	direction: rtl;
+	padding-right: 100px;
+}
+
+/*aside{
+	width: 250px;
+	float:right;
+	margin-top: 250px;
+	margin-left:-100px;
+}*/
+
+nav {
+	width: 120px;
+	height: 1521px;
+	margin-top: 250px;
+	margin-left:-100px;
+}
+
+nav li{
+	list-style: none;
+	background: url('../images/nav-li.gif') no-repeat;
+	height: 40px;
+}
+
+nav li a{
+	color: #ffffff;
+	margin-left:10px;
+}
+
+footer {
+	background: url('../images/footer.gif') no-repeat;
+	margin: auto;
+	width: 1695px;
+	height: 182px;
+	//position: absolute;
+	//bottom: 0px;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.container {
+	width: 1200px;
+}
+
+#buyTickets {
+	background: url('../images/buyTickets.gif') no-repeat;
+	display: block;
+	float: right;
+	margin-top:75px;
+	margin-right:-50px;
+	width: 149px;
+	height: 127px;
+}
+
+#calender{
+	background: url('../images/calender.gif') no-repeat;
+	width: 167px;
+	height: 211px;
+	//margin-top: 0px;
+}
+
+#upcomingEvent{
+	background: url('../images/event-tmp.gif') no-repeat;
+	width: 162px;
+	height: 212px;
+	margin-top: 30px;
+}
+
+#map{
+	background: url('../images/map-tmp.gif') no-repeat;
+	width: 164px;
+	height: 459px;
+	margin-top: 30px;
+}
+
+.breadcrumb{
+	background-color:transparent;
+}
+
+.breadcrumb > li + li:before {
+   content: "> ";
+   padding: 0 5px;
+}
+
+.xhibit-frame{
+	width: 721px;
+	height: 477px;
+	background: #ffffff;
+	margin-right: 180px;
+}
