@@ -38,7 +38,6 @@ aside{
 	margin-top: 20px;
 	position: absolute;
 	right:25%;
-	background-color: red;
 }
 
 nav {
@@ -83,9 +82,10 @@ a:hover{
 #buyTickets {
 	background: url('../images/buyTickets.gif') no-repeat;
 	//display: block;
+	position: absolute;
 	float: right;
 	margin-top:75px;
-	margin-right:-50px;
+	margin-right:100px;
 	width: 149px;
 	height: 127px;
 }
