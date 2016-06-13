@@ -22,7 +22,7 @@ main {
 	width: 90%;
 	height: 1521px;
 	direction: rtl;
-	padding-right: 350px;
+	padding-right: 250px;
 	margin-top: 20px;
 	position: absolute;
 	left:0px;
@@ -37,7 +37,7 @@ aside{
 	float:right;
 	margin-top: 20px;
 	position: absolute;
-	right:25%;
+	right:10%;
 }
 
 nav {
@@ -81,12 +81,13 @@ a:hover{
 
 #buyTickets {
 	background: url('../images/buyTickets.gif') no-repeat;
+	background-size: contain;
 	//display: block;
 	position: absolute;
 	float: right;
-	margin-top:75px;
-	margin-right:100px;
-	width: 149px;
+	margin-top:7%;
+	right:5%;
+	//width: 20.5%;
 	height: 127px;
 }
 
@@ -121,10 +122,11 @@ a:hover{
 }
 
 .xhibit-frame{
-	//width: 90%;
+	max-width: 700px;
 	height: 477px;
 	background: #ffffff;
 	margin-top: 30px;
+	right:10px;
 	border-radius: 25px;
 }
 
