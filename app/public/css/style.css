@@ -10,36 +10,46 @@ header, footer, main, section, nav, article, aside {
 header {
 	background: url('../images/header.gif') no-repeat;
 	margin: auto;
-	width: 1695px;
+	width: 100%;
 	height: 233px;
 }
 
 main {
 	background: url('../images/main.gif') no-repeat;
-	width: 990px;
+	//background-color: #EEE3AE;
+	background-size: contain;
+	float: left;
+	width: 90%;
 	height: 1521px;
 	direction: rtl;
-	padding-right: 100px;
+	padding-right: 350px;
+	margin-top: 20px;
+	position: absolute;
+	left:0px;
 }
 
-/*aside{
-	width: 250px;
+#wrapper{
+	position: relative;
+}
+
+aside{
+	width: 20%;
 	float:right;
-	margin-top: 250px;
-	margin-left:-100px;
-}*/
+	margin-top: 20px;
+	position: absolute;
+	right:25%;
+}
 
 nav {
 	width: 120px;
-	height: 1521px;
 	margin-top: 250px;
-	margin-left:-100px;
 }
 
 nav li{
 	list-style: none;
 	background: url('../images/nav-li.gif') no-repeat;
 	height: 40px;
+	width: 167px;
 }
 
 nav li a{
@@ -49,11 +59,16 @@ nav li a{
 
 footer {
 	background: url('../images/footer.gif') no-repeat;
+	background-size: contain;
 	margin: auto;
-	width: 1695px;
+	width: 100%;
 	height: 182px;
-	//position: absolute;
-	//bottom: 0px;
+	position: fixed;
+	bottom: 0px;
+	//clear: both;
+}
+.clear{
+	clear: both;
 }
 
 a:hover{
@@ -66,10 +81,11 @@ a:hover{
 
 #buyTickets {
 	background: url('../images/buyTickets.gif') no-repeat;
-	display: block;
+	//display: block;
+	position: absolute;
 	float: right;
 	margin-top:75px;
-	margin-right:-50px;
+	margin-right:100px;
 	width: 149px;
 	height: 127px;
 }
@@ -105,8 +121,24 @@ a:hover{
 }
 
 .xhibit-frame{
-	width: 721px;
+	//width: 90%;
 	height: 477px;
 	background: #ffffff;
-	margin-right: 180px;
+	margin-top: 30px;
+	border-radius: 25px;
 }
+
+
+/* Small devices (tablets, 768px and up) */
+/*@media (min-width: @screen-sm-min) {
+#calender, #upcomingEvent, #map{
+	display: none;
+}
+
+
+.breadcrumb{
+	background-color:transparent;
+}
+
+}*/
+
