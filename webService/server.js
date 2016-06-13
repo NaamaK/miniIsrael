@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var todoAction = require('./exhibitController');
+var exhibitAction = require('./exhibitController');
 var port = process.env.PORT || 3000;
 
 app.set('port', port);

@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
-var Action = require('./exhibit');
+var Exhibit = require('./exhibit');
 
 exports.getData = function(req,res) {
-	Action.find({}).
+	Exhibit.find({}).
+	where("name").ne("PRIVATE").
 	exec(function(err,docs) {
 		res.json(docs);
 		return;
