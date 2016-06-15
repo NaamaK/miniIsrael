@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="exhibitPage">
+<html ng-app="xhibit">
     <head>
         <title>Mini Israel</title>
         <meta charset="UTF-8">
@@ -22,11 +22,11 @@
                 </ol>
                 <h1 class="col-md-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">מגדלי עזריאלי</h1>
                 <section id="content">
-                    <section ng-repeat="ex in exhibits" class="xhibit-frame col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
-                        <img ng-src="{{ex.image}}">
+                    <section class="xhibit-frame col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
+                        <img ng-src="{{exhibit.image}}">
                     </section>
                     <section class="xhibit-frame col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
-                        
+                        {{exhibit.info}}
                     </section>
                 </section>
                 
