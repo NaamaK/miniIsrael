@@ -23,11 +23,13 @@
                 <section id="content">
                     <section ng-repeat="ex in exhibits" class="xhibit-frame col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
                         <img ng-src="{{ex.image}}">
-                        <h2>{{ex.name}}</h2>
-                        <h5>איפה:{{ex.where}}</h5>
-                        <h5>מתי:{{ex.when}}</h5>
-                        <h5>כמה:{{ex.size}}</h5>
-                        <p>{{ex.info}}</p>
+                        <section>
+                            <h2>{{ex.name}}</h2>
+                            <h5>איפה:{{ex.where}}</h5>
+                            <h5>מתי:{{ex.when}}</h5>
+                            <h5>כמה:{{ex.size}}</h5>
+                            <p>{{ex.info}}</p>
+                        </section>
                     </section>
                 </section>
                 

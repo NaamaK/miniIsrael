@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var exhibitAction = require('./exhibitController');
+var attractionAction = require('./attractionController');
 var port = process.env.PORT || 3000;
 
 app.set('port', port);
@@ -13,6 +14,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/ws/getExhibits', exhibitAction.getData);
+app.get('/ws/getAttractions', attractionAction.getData);
 
 app.listen(port);
 console.log("service is listening on port "+ port);
