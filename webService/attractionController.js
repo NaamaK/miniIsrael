@@ -8,3 +8,7 @@ exports.getData = function(req,res) {
         return;
     });
 };
+
+// exports.getData2 = function(req,res) {
+//     console.log("hiiiii!");
+// };

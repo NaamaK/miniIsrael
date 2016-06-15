@@ -15,6 +15,26 @@ app.use(function(req, res, next) {
 
 app.get('/ws/getExhibits', exhibitAction.getData);
 app.get('/ws/getAttractions', attractionAction.getData);
+//app.get('/exhibit', attractionAction.getData2);
+app.get('/exhibit/:value', function(req,res) {
+    //var value = req.params.value;
+    //res.sendFile(`${__dirname}/inin.html`);
+    res.send('<!DOCTYPE html>'+
+          '<html>'+
+                '<body>'+
+                 '<h1>Wow!!!</h1>'+
+             '</body>'+
+          '</html><head>'+
+             '</head>'+
+          );
+    console.log("hiiiii!");
+});
+    // function(req,res) {
+    // // var attraction = req.params.specificAttraction;
+    // // //res.sendFile(`${__dirname}/inin.html`);
+    // // console.log("attraction"+attraction);
+    // console.log("hi");
+//});
 
 app.listen(port);
 console.log("service is listening on port "+ port);
