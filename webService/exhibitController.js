@@ -8,3 +8,13 @@ exports.getData = function(req,res) {
 		return;
 	});
 };
+
+exports.getSpecific = function(name,req,res) {
+	Exhibit.find({}).
+	where('name').equals(name).
+	exec(function(err,docs) {
+		res.json(docs);
+		console.log(docs);
+		return;
+	});
+};

@@ -7,7 +7,7 @@ var attractionSchema = new schema({
     date:  String,
     image: String,
     info:  String,
-    exhibits: [Number]
+    exhibits: [String]
 }, {collection: 'attractions'});
 
 var Attraction = mongoose.model('Attraction', attractionSchema);
