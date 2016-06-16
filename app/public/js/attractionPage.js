@@ -4,18 +4,17 @@ var model;
 var exhibits;
 
 app.run(function($http) {
-    $http.get('http://localhost:3000/ws/getAttractions').success(function(data) {
+    $http.get('https://mini-israel-service.herokuapp.com/ws/getAttractions').success(function(data) {
         model = data;
-        //console.log(model);
     });
 });
 
 app.controller('attractionCtrl', function($scope, $http) {
-    $http.get('http://localhost:3000/ws/getExhibits').then(function(response){
+    $http.get('https://mini-israel-service.herokuapp.com/ws/getExhibits').then(function(response){
         exhibits = response.data;
     });
 
-    $http.get('http://localhost:3000/ws/getAttractions').then(function(response){
+    $http.get('https://mini-israel-service.herokuapp.com/ws/getAttractions').then(function(response){
     
         $scope.attractions = response.data;
 
