@@ -6,7 +6,88 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/hamburger.js"></script>
     </head>
+    <body ng-controller="exhibitCtrl">
+        <div id="wrapper">
+            <header>
+                <a href="index.html" id="logo"></a>
+            </header>
+
+            <div class="mobile-nav">
+
+                <nav role="navigation">
+                  <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    
+                    <ul id="menu">
+                      <a href="#"><li>מידע למבקרים</li></a>
+                      <a href="#"><li>משפחות ומבקרים</li></a>
+                      <a href="#"><li>מאמרים</li></a>
+                      <a href="#"><li>צור קשר</li></a>
+                    </ul>
+                  </div>
+                </nav>
+            </div> 
+
+            <nav id="leftNav">
+                <ul>
+                    <li><a href="#">איפה אנחנו על המפה</a></li>
+                    <li><a href="about.html">מאמרים</a></li>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" id="subLogo"></a> 
+            <nav id="rightNav">
+                <ul>
+                    <li><a href="#">גלה את מיני ישראל</a></li>
+                    <li><a href="models.html">מידע למבקרים</a></li>
+                    <li><a href="contact.html">צור קשר</a></li>
+                </ul>
+            </nav>
+            <main class="clear">
+                <ol class="breadcrumb col-md-6 col-lg-6 col-md-offset-6 col-lg-offset-6">
+                    <li><a href = "#">עמוד הבית</a></li>
+                    <li><a href = "#">מידע למבקרים</a></li>
+                    <li class = "active">דגמים</li>
+                </ol>
+                <h1 class="col-md-3 col-lg-3 col-md-offset-9 col-lg-offset-9">דגמים</h1>
+                <section id="content">
+                    <section ng-repeat="ex in exhibits" class="xhibit-frame col-md-9 col-lg-9 col-md-offset-3 col-lg-offset-3">
+                        <img ng-src="{{ex.image}}">
+                        <section>
+                            <h2>{{ex.name}}</h2>
+                            <h5>איפה:{{ex.where}}</h5>
+                            <h5>מתי:{{ex.when}}</h5>
+                            <h5>כמה:{{ex.size}}</h5>
+                            <p>{{ex.info}}</p>
+                        </section>
+                    </section>
+                </section>
+            </main>
+            <aside>
+                <nav id="sideNav">
+                    <ul>
+                        <li> <a href="#">משפחות ומבקרים</a></li>
+                        <li> <a href="#">אירועים פרטיים ועסקיים</a></li>
+                        <li> <a href="#">בתי ספר ומורים</a></li>
+                        <li> <a href="#">20.8.2011</a><p><br><br>החג הזה כולם חוגגים במיני ישראל שבועות</p></li>
+                        <li> <a href="#">אנחנו על המפה</a></li>
+                    </ul>
+                </nav>  
+            </aside>
+            <footer class="clear">
+                
+            </footer>
+        </div>
+
+    </body>
+    
+    
+    <!--
     <body ng-controller="exhibitCtrl" >
         <header class="col-sm-12 col-md-12 col-lg-12">
 
@@ -66,4 +147,5 @@
         <script src="js/lib/angular/angular.min.js"></script>
         <script src="js/exhibitPage.js"></script>
     </body>
+    -->
 </html>
