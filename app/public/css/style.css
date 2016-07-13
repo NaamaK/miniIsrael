@@ -116,81 +116,8 @@ header {
   opacity: 0.8;
 }
 
+/* end of respinsive menu attributes*/
 
-
-
-/*.menu-btn div {
-
-	line-height: 1.2;
-	font-size: 18px;
-	font-weight: 200;
-	z-index: 99;
-}
-.menu-btn{
-	position: absolute;
-	cursor: pointer;
-	right: 0;
-	top: 0;
-	padding-right: 10px;
-	padding-top: 10px;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-	z-index: 99;
-	-webkit-transform: translate3d(0,0,0);
-}
-
-.menu-btn span {
-	display: block;
-	width: 30px;
-	height: 5px;
-	background:#CC1719;
-	margin: 4px 0;
-	border-radius:1em;
-	z-index: 99;
-}
-
-.responsive-menu{
-	display: none;
-	position: absolute;
-	right: 0;
-	top: 60px;
-	font-size: 22px;
-	border-bottom: #EDEDED solid 1px;
-	border-left: #EDEDED solid 1px;
-	-webkit-box-shadow: 0px 2px 2px 0px rgba(245,245,245,1);
-	-moz-box-shadow: 0px 2px 2px 0px rgba(245,245,245,1);
-	box-shadow: 0px 2px 2px 0px rgba(245,245,245,1);
-	border-top: #EDEDED solid 1px;
-	width: 100%;
-	box-sizing: border-box;
-	background: #fff;
-	z-index:99;
-}
-.responsive-menu li{
-	list-style:none;
-	width:100%;
-	height:50px;
-	text-align:right;
-	padding-top:20px;	
-}
-.responsive-menu li:hover{
-	background: #EDE2AB;
-}
-
-.responsive-menu li a{
-	padding:20px 20px 20px 100px;
-}*/
-
-/*
-#backExtension{
-	background-image: url("../images/backExtension.jpg");
-	background-repeat:repeat-x;
-	height: 60px;
-	height:207px;
-	float: left; 
-}*/
 
 #logo{
 	background-image: url("../images/logo.png");
@@ -364,9 +291,17 @@ aside{
 }
 
 #sideNav ul > li:nth-child(5){
-	background: url("../images/mapSide.png")no-repeat;
+	background: url("../images/mapHead.gif")no-repeat;
 	height:412px;
 	padding:2px;
+}
+
+#sideNav ul > li:nth-child(5) iframe{
+	height:382px;
+	width:164px;
+	margin-top: 6px;
+	margin-left: -2px;
+	border-style: none;
 }
 
 footer{
@@ -378,8 +313,9 @@ footer{
 	margin-left:-825px;
 	position: fixed;
 	bottom:0px;
-
 }
+
+/* breakpoint - wide screens */
 @media(min-width:1001px){
 	.mobile-nav{
 		display:none !important;
@@ -484,6 +420,7 @@ footer{
 	}
 }
 
+/* breakpoint - mobile */
 @media(max-width:590px){
 	header{
 		background: #ffffff;
