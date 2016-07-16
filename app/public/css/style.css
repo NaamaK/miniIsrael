@@ -240,6 +240,22 @@ main{
 	padding: 10px 2px;
 }
 
+.xhibit-frame a{
+	text-decoration: none;
+	color: #000000;
+}
+
+.xhibit-frame article a{
+	color: #cc1719;
+	font-weight: bold;
+	padding: 7px; 
+}
+
+#xinfo{
+	float: left;
+	width: 66%;
+}
+
 #xvideo{
 	padding: 15px 20px; 
 }
@@ -248,6 +264,26 @@ main{
 	width:80%; 
 	height:315px;
 	border-style: none;
+}
+
+#watched{
+	background: url("../images/eye-icon.png")no-repeat;
+	background-size: contain;
+	top:0px;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+}
+
+#heart{
+	background: url("../images/heartEnabled.png")no-repeat;
+	background-size: contain;
+	top:5px;
+	left: 60px;
+	width: 30px;
+	height: 30px;
+	position: absolute; 
 }
 
 #like{
