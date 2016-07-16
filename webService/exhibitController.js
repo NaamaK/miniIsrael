@@ -9,9 +9,9 @@ exports.getData = function(req,res) {
 	});
 };
 
-exports.getSpecific = function(name,req,res) {
-	Exhibit.find({}).
-	where('name').equals(name).
+exports.getSpecific = function(nameId,req,res) {
+	Exhibit.findOne({}).
+	where('nameId').equals(nameId).
 	exec(function(err,docs) {
 		res.json(docs);
 		console.log(docs);
