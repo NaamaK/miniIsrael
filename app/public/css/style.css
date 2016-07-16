@@ -237,6 +237,30 @@ main{
 	border-radius: 25px;
 }
 
+.xhibit-frame img{
+	padding: 10px 2px;
+}
+
+#xvideo{
+	padding: 15px 20px; 
+}
+
+#xvideo iframe{
+	width:80%; 
+	height:315px;
+}
+
+#like{
+	background: url("../images/like.gif")no-repeat;
+	background-size: contain;
+	width:10%;
+	height:50px;
+	float: left;
+	margin-top: 127px;
+	margin-left: 20px;
+	border-style: none;
+}
+
 aside{
 	width:178px;
 	height:max-height;
@@ -341,6 +365,10 @@ footer{
 		display: none;
 	}
 
+	.xhibit-frame{
+		margin: 10px auto;
+	}
+
 	nav{
 		margin-top: 70px;
 	}
@@ -413,6 +441,19 @@ footer{
 
 	.breadcrumb{
 		display: none;
+	}
+
+	#xvideo{
+		text-align: center; 
+	}
+
+	#like{
+		width:60px;
+		height:50px;
+		margin-right: 44.5%;
+		float: none;
+		display: block;
+		margin-top: 4%;
 	}	
 
 	footer{
@@ -459,6 +500,19 @@ footer{
 
 	.breadcrumb{
 		display: none;
+	}
+
+	#xvideo{
+		text-align: center; 
+	}
+
+	#like{
+		width:100%;
+		height:50px;
+		margin-right: -45%;
+		float: none;
+		display: block;
+		margin-top: 4%;
 	}	
 
 	footer{
@@ -504,6 +558,19 @@ footer{
 
 	.breadcrumb{
 		display: none;
+	}
+
+	#xvideo{
+		text-align: center; 
+	}
+
+	#like{
+		width:100%;
+		height:50px;
+		margin-right: -45%;
+		float: none;
+		display: block;
+		margin-top: 4%;
 	}	
 
 	footer{
@@ -686,3 +753,17 @@ a:hover{
 
 }
 */
+
+.profile{
+    border: 3px solid #B7B7B7;
+    padding: 10px;
+    margin-top: 10px;
+    width: 350px;
+    background-color: #F7F7F7;
+    height: 160px;
+}
+.profile p{margin: 0px 0px 10px 0px;}
+.head{margin-bottom: 10px;}
+.head a{float: right;}
+.profile img{width: 100px;float: left;margin: 0px 10px 10px 0px;}
+.proDetails{float: left;}
