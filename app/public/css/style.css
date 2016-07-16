@@ -248,10 +248,11 @@ main{
 #xvideo iframe{
 	width:80%; 
 	height:315px;
+	border-style: none;
 }
 
 #like{
-	background: url("../images/like.gif")no-repeat;
+	background: url("../images/heartDisabled.png")no-repeat;
 	background-size: contain;
 	width:10%;
 	height:50px;
