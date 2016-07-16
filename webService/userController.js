@@ -31,7 +31,7 @@ exports.addUser = function(req,res) {
 exports.addLike = function(req,res) {
 
 	var userEmail = req.body.email;
-	var likedExhibit = Number(req.body.like);
+	var likedExhibit = req.body.like;
 	var isLiked = false;
 
 	User.findOne({email: userEmail}, function(err,doc) {
@@ -65,7 +65,7 @@ exports.addLike = function(req,res) {
 exports.addWatched = function(req,res) {
 
 	var userEmail = req.body.email;
-	var watchedExhibit = Number(req.body.watched);
+	var watchedExhibit = req.body.watched;
 	var isWatched = false;
 
 	User.findOne({email: userEmail}, function(err,doc) {
@@ -74,13 +74,7 @@ exports.addWatched = function(req,res) {
 			doc.watched.forEach(function (d) {
 				if (d === watchedExhibit && !isWatched) isWatched = true;
 			});
-			if (isWatched) {
-				doc.update({
-					$pull: {watched: watchedExhibit}
-				}).exec(function(err, res) {
-					mongoose.disconnect();
-				});
-			}else{
+			if (!isWatched) {
 				doc.update({
 					$push: {watched: watchedExhibit}
 				}).exec(function(err, res) {

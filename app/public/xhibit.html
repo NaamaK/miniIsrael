@@ -25,7 +25,7 @@
                         $('#gSignIn').slideUp('slow');
                         document.cookie = "googleEmail=" + resp.emails[0].value;
                         document.cookie = "googleUser=" + resp.displayName;
-                        //angular.element(document.getElementById('indexController')).scope().getUser();
+                        angular.element(document.getElementById('xhibitController')).scope().getUser();
                     });
                 });
             }
@@ -51,11 +51,11 @@
                 });
                 document.cookie = "googleEmail=";
                 document.cookie = "googleUser=";
-                //angular.element(document.getElementById('indexController')).scope().getUser();
+                angular.element(document.getElementById('exhibitCtrl')).scope().getUser();
             }
         </script>
     </head>
-    <body ng-controller="exhibitCtrl">
+    <body ng-controller="exhibitCtrl" id="xhibitController">
         <div id="wrapper">
             <header>
                 <a href="index.html" id="logo"></a> 
@@ -71,9 +71,9 @@
                     <span></span>
                     
                     <ul id="menu">
-                      <a href="#"><li>מידע למבקרים</li></a>
-                      <a href="#"><li>משפחות ומבקרים</li></a>
-                      <a href="#"><li>מאמרים</li></a>
+                      <a href="index.html"><li>עמוד הבית</li></a>
+                      <a href="xhibits.html"><li>דגמים</li></a>
+                      <a href="attracions.html"><li>אטרקציות</li></a>
                       <a href="#"><li>צור קשר</li></a>
                     </ul>
                   </div>
@@ -127,7 +127,7 @@
                     </section>
                     <section class="xhibit-frame col-md-11 col-lg-11 col-md-offset-1 col-lg-offset-1" id="xvideo">
                         <iframe src={{exhibit.video}} allowfullscreen></iframe>
-                        <button id="like" ng-click="image={'background-image':getImage()}" ng-style="image"></button>
+                        <button id="like" ng-click="addLike(exhibit.nameId);image={'background-image':getImage()}" ng-style="image"></button>
                     </section>
                 </section>
             </main>

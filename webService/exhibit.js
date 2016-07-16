@@ -10,7 +10,7 @@ var exhibitSchema = new schema({
 	info:  String,
 	image: String,
 	video: String,
-	attractions: [Number]
+	attractions: [String]
 }, {collection: 'exhibits'});
 
 var Exhibit = mongoose.model('Exhibit', exhibitSchema);

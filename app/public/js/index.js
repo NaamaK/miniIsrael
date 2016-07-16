@@ -24,16 +24,13 @@ app.controller('indexCtrl', function($scope, $http, $cookies) {
 
     	var config = {
             headers : {
-                //'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 'Content-Type': 'application/json'
             }
         };
 
     	$http.post('http://localhost:3000/ws/saveUser', body).success(function (data, status, headers, config) {
 	        console.log("SUCCESS 200!");
-
 	    }).error(function (data, status, headers, config) {
-	    	//
 	    	console.log("ERROR!!");
 	    });          
     };

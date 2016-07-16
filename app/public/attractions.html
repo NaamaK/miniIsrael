@@ -23,9 +23,9 @@
                     <span></span>
                     
                     <ul id="menu">
-                      <a href="#"><li>מידע למבקרים</li></a>
-                      <a href="#"><li>משפחות ומבקרים</li></a>
-                      <a href="#"><li>מאמרים</li></a>
+                      <a href="index.html"><li>עמוד הבית</li></a>
+                      <a href="xhibits.html"><li>דגמים</li></a>
+                      <a href="attracions.html"><li>אטרקציות</li></a>
                       <a href="#"><li>צור קשר</li></a>
                     </ul>
                   </div>
@@ -64,7 +64,7 @@
                             <h5>תאריך:{{att.date}}</h5>
                             <p>{{att.info}}</p>
                             <article ng-repeat="ex in att.exhibits">
-                                <a href="https://mini-israel-service.herokuapp.com/xhibit.html/{{ex}}">{{ex}}</a>
+                                <a ng-href="/xhibit.html/{{getExhibit(ex)}}">{{ex}}</a>
                             </article>
                         </section>
                     </section>
@@ -94,79 +94,3 @@
         
     </body>
 </html>
-
-<!--
-<!DOCTYPE html>
-<html ng-app="attractionPage">
-    <head>
-        <title>Mini Israel</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body ng-controller="attractionCtrl" >
-        <header class="col-sm-12 col-md-12 col-lg-12">
-
-        </header>
-        <div id="wrapper" class="col-sm-5 col-md-8 col-lg-8 ">
-            <main class="col-md-8 col-lg-8 col-md-offset-3 col-lg-offset-3">
-                <a id="buyTickets" class="col-md-2 col-lg-2 col-md-offset-8 col-lg-offset-8"></a>
-                <ol class="breadcrumb col-md-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
-                    <li><a href = "#">עמוד הבית</a></li>
-                    <li><a href = "#">מידע למבקרים</a></li>
-                    <li><a href = "#">דגמים</a></li>
-                    <li class = "active">מגדלי עזריאלי</li>
-                </ol>
-                <h1 class="col-md-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">אטרקציות</h1>
-                <section id="content">
-                    <section ng-repeat="att in attractions" class="xhibit-frame col-md-9 col-lg-9 col-md-offset-1 col-lg-offset-1">
-                        <img ng-src="{{att.image}}">
-                        <section>
-                            <h2>{{att.name}}</h2>
-                            <h5>שעות:{{att.hours}}</h5>
-                            <h5>תאריך:{{att.date}}</h5>
-                            <p>{{att.info}}</p>
-                            <article ng-repeat="ex in att.exhibits">
-                                <a href="https://mini-israel-service.herokuapp.com/xhibit.html/{{ex}}">{{ex}}</a>
-                            </article>
-                        </section>
-                    </section>
-                    
-                </section>
-                
-            </main>
-            <aside class="col-sm-5 col-md-1 col-lg-1">
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="#">משפחות מבקרים</a>
-                        </li>
-                        <li >
-                            <a href="#">אירועים פרטיים ועסקיים</a>
-                        </li>
-                        <li >
-                            <a href="#">בתי ספר ומורים</a>
-                        </li>
-                    </ul>
-                </nav>
-                <section id="calender">
-                
-                </section>
-                <section id="upcomingEvent">
-                    
-                </section>  
-                <section id="map">
-                    
-                </section>  
-            </aside>
-            <div class="clear"></div>
-        </div>
-        <footer class="col-sm-12 col-md-12 col-lg-12">
-            
-        </footer>
-        <script src="js/lib/angular/angular.min.js"></script>
-        <script src="js/attractionPage.js"></script>
-    </body>
-</html>
--->
