@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="exhibitPage">
+<html ng-app="attractionPage">
     <head>
         <title>Mini Israel</title>
         <meta charset="UTF-8">
@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
-    <body>
+    <body ng-controller="attractionCtrl" >
         <div id="wrapper">
             <header>
                 <a href="index.html" id="logo"></a> 
@@ -56,7 +56,7 @@
                 </ol>
                 <h1 class="col-md-3 col-lg-3 col-md-offset-9 col-lg-offset-9">אטרקציות</h1>
                 <section id="content">
-                    <section ng-repeat="att in attractions" class="xhibit-frame col-md-9 col-lg-9 col-md-offset-3 col-lg-offset-3">
+                    <section ng-repeat="att in attractions" class="xhibit-frame col-md-11 col-lg-11 col-md-offset-1 col-lg-offset-1">
                         <img ng-src="{{att.image}}">
                         <section>
                             <h2>{{att.name}}</h2>
@@ -88,6 +88,8 @@
             <footer class="clear">
                 
             </footer>
+            <script src="js/lib/angular/angular.min.js"></script>
+            <script src="js/attractionPage.js"></script>
         </div>
         
     </body>

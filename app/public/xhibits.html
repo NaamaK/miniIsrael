@@ -55,7 +55,7 @@
                 </ol>
                 <h1 class="col-md-3 col-lg-3 col-md-offset-9 col-lg-offset-9">דגמים</h1>
                 <section id="content">
-                    <section ng-repeat="ex in exhibits" class="xhibit-frame col-md-9 col-lg-9 col-md-offset-3 col-lg-offset-3">
+                    <section ng-repeat="ex in exhibits" class="xhibit-frame col-md-11 col-lg-11 col-md-offset-1 col-lg-offset-1">
                         <img ng-src="{{ex.image}}">
                         <section>
                             <h2>{{ex.name}}</h2>
@@ -84,6 +84,8 @@
             <footer class="clear">
                 
             </footer>
+            <script src="js/lib/angular/angular.min.js"></script>
+            <script src="js/exhibitPage.js"></script>
         </div>
 
     </body>

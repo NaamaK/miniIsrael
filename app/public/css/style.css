@@ -207,7 +207,6 @@ main{
 	float:left;
 	position:relative;
 	width:80%;
-	height:inherit;
 	border-radius:1.5em;
 	direction: rtl;
 	padding-right: 50px;
@@ -223,10 +222,10 @@ main{
 }
 
 #content{
-	height:1550px;
 	width:95%;
 	float: right;
 	margin-right: 14px;
+	padding-bottom: 200px;
 }
 
 .xhibit-frame{
@@ -260,6 +259,43 @@ main{
 	margin-top: 127px;
 	margin-left: 20px;
 	border-style: none;
+	outline: none;
+}
+
+#index1{
+	background: url("../images/index1.jpg")no-repeat;
+	background-size: contain;
+	width: 95%;
+	height: 250px;
+	border: 5px solid #ffffff;
+
+}
+
+#index2{
+	background: url("../images/index2.jpg")no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 270px;
+	margin-top: 5px;
+	border: 2px solid #ffffff;
+}
+
+.goto{
+	margin-top: 30px;
+	margin-right: 10%;
+	background: #cc1719;
+	border-radius: 999px;
+	width:200px;
+	color: #fff;
+	display: inline-block;
+	padding: 8px 20px;
+	font: normal 700 24px/1 "Calibri", sans-serif;
+	text-align: center;
+}
+
+.goto:hover{
+	color: #ffffff;
+	text-decoration: none;
 }
 
 aside{
@@ -319,6 +355,7 @@ aside{
 	background: url("../images/mapHead.gif")no-repeat;
 	height:412px;
 	padding:2px;
+	padding-bottom: 600px;
 }
 
 #sideNav ul > li:nth-child(5) iframe{
@@ -360,6 +397,11 @@ footer{
 
 	#logo{
 		margin-top: -70px;
+	}
+
+	.goto{
+		width:70%;
+		margin-right:14%;
 	}
 
 	#subLogo{
@@ -477,6 +519,11 @@ footer{
 		display: none;
 	}
 
+	.goto{
+		width:70%;
+		margin-right:14%;
+	}
+
 	aside{
 		display:none;
 	}
@@ -533,6 +580,11 @@ footer{
 
 	#subLogo{
 		display: none;
+	}
+
+	.goto{
+		width:70%;
+		margin-right:14%;
 	}
 
 	aside{
