@@ -19,9 +19,11 @@ var menu = 		'<div class="mobile-nav">'+
 	                    '<span></span>'+
 	                    '<span></span>'+
 	                    '<ul id="menu">'+
+	                      '<a href="index.html" id="gSignIn" ><li></li></a>'+
 	                      '<a href="index.html"><li>עמוד הבית</li></a>'+
 	                      '<a href="xhibits.html"><li>דגמים</li></a>'+
 	                      '<a href="attracions.html"><li>אטרקציות</li></a>'+
+                          '<a href="index.html" onclick="signOut();"><li>התנתק</li></a>'+
 	                      '<a href="#"><li>צור קשר</li></a>'+
 	                    '</ul>'+
 	                  '</div>'+
@@ -45,4 +47,3 @@ var menu = 		'<div class="mobile-nav">'+
 
 var signIn =	'<div id="gSignIn"></div>'+
                 '<div class="userContent"></div>';
-                //'<a href="#" id="signOut" onclick="signOut();">Sign out</a>';

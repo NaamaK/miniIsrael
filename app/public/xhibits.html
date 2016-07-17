@@ -26,7 +26,7 @@
                 </ol>
                 <h1 class="col-md-3 col-lg-3 col-md-offset-9 col-lg-offset-9">דגמים</h1>
                 <section id="content">
-                    <section ng-repeat="ex in exhibits" my-directive="ex.nameId" callback-fn="getIfLiked(exhibit)"class="xhibit-frame col-md-11 col-lg-11 col-md-offset-1 col-lg-offset-1">
+                    <section ng-repeat="ex in exhibits"  class="xhibit-frame col-md-11 col-lg-11 col-md-offset-1 col-lg-offset-1">
                         <a href="/xhibit.html/{{ex.nameId}}">
                         <img ng-src="{{ex.image}}">
                         <section id="xinfo">
@@ -36,9 +36,8 @@
                             <h5>כמה:{{ex.size}}</h5>
                         </section>
                         </a>
-                        <div id="watched"></div>
-                        <div id="heart"></div>
-                        <button ng-click="click()">Click</button>
+                        <myDirective2 my-directive="ex.nameId" callback-fn="getIfWatched(exhibit)" class="watched" id="watched-{{ex.nameId}}"></myDirective2>   
+                        <myDirective my-directive="ex.nameId" callback-fn="getIfLiked(exhibit)" class="heart" id="heart-{{ex.nameId}}"></myDirective>
                     </section>
                 </section>
             </main>

@@ -25,7 +25,14 @@ app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce,
 
     $http.get('http://localhost:3000/xhibit/' + $scope.requestedExhibit).then(function(response){
         $scope.exhibit = response.data;
+        $scope.getUser();
+        $scope.addWatch($scope.requestedExhibit);
     });
+
+    $scope.getUser = function () {
+        $scope.userName = $cookies.get('googleUser');
+        $scope.userEmail = $cookies.get('googleEmail');
+    };
 
     $scope.getImage = function(){  //change the heart icon on click
         var deafultImg = "heartDisabled.png";
@@ -57,6 +64,23 @@ app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce,
         });         
     };
 
+    $scope.addWatch = function (watchedExhibit) {
+        var body = {
+            email: $scope.userEmail,
+            watched: watchedExhibit
+        };
+
+        var config = {
+            headers : {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        $http.post('http://localhost:3000/ws/addWatched', body).success(function (data, status, headers, config) {
+        }).error(function (data, status, headers, config) {
+        });         
+    };
+
     $scope.getUser = function () {
         $scope.userName = $cookies.get('googleUser');
         $scope.userEmail = $cookies.get('googleEmail');
@@ -76,9 +100,7 @@ app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce,
         };
 
         $http.post('http://localhost:3000/ws/saveUser', body).success(function (data, status, headers, config) {
-            console.log("SUCCESS 200!");
         }).error(function (data, status, headers, config) {
-            console.log("ERROR!!");
         });          
     };
     
@@ -111,10 +133,43 @@ app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce,
         return defer.promise;
     };
 
+    $scope.isWatched = function(exhibit) {
+        var defer = $q.defer();
+        var body = {
+            email: $scope.userEmail,
+            exhibit: exhibit
+        };
+        
+        var config = {
+            headers : {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        $http.post('http://localhost:3000/ws/isWatched', body).success(function (data, status, headers, config) {
+            console.log("SUCCESS 200!");
+            defer.resolve(data.watched);
+            
+        }).error(function (data, status, headers, config) {
+            console.log("ERROR!!" + status);
+            window.data = data.watched;
+        });
+        return defer.promise;
+    };
+
     $scope.getIfLiked = function() {
         $scope.isLiked($scope.requestedExhibit).then(function(data) {
             if (data) angular.element(document.getElementById('like')).css('background-image','url(images/heartEnabled.png)');
             else angular.element(document.getElementById('like')).css('background-image','url(images/heartDisabled.png)');
+        });
+    };
+
+    $scope.getIfWatched = function(exhibit) {
+        $scope.isWatched(exhibit).then(function(data) {
+            var element = "watched-" + exhibit;
+            console.log(element + " is " + data);
+            if (data) angular.element(document.getElementById(element)).css('background-image','url(images/eye-icon.png)');
+            else angular.element(document.getElementById(element)).css('display','none');
         });
     };
 

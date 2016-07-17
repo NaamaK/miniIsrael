@@ -1,14 +1,5 @@
 var app = angular.module('index', ['ngCookies']);
 
-var model;
-
-// app.run(function($http) {
-// 	$http.get('https://mini-israel-service.herokuapp.com/xhibit/:specificExhibit').success(function(data) {
-// 		model = data;
-// 		console.log(data);
-// 	});
-// });
-
 app.controller('indexCtrl', function($scope, $http, $cookies) {
 
     $scope.getUser = function () {

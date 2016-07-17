@@ -8,8 +8,7 @@ exports.addUser = function(req,res) {
 		likes: [],
 		watched: [],
 		name: req.body.name,
-		email: req.body.email,
-		token: "555"
+		email: req.body.email
 	});
 
 	User.count({email: newUser.email}, function(err,count) {
@@ -94,8 +93,7 @@ exports.isLiked = function(req,res) {
 	var userEmail = req.body.email;
 	var exhibit = req.body.exhibit;
 	var isLiked = false;
-	var check = "naama.kapach@gmail.com"===userEmail;
-	console.log("naama.kapach@gmail.com=? " + check);
+
 	User.findOne({email: userEmail}, function(err,doc) {
 		// user already exists in db
 		console.log("doc exist! > " + doc);
@@ -105,6 +103,28 @@ exports.isLiked = function(req,res) {
 			});
 			//mongoose.disconnect();;
 			res.status(200).json({'status' : "OK" , 'liked' : isLiked});
+		}
+		else {
+			console.log("user with email `" + userEmail + "` doesn`t exist!");
+			res.status(400).json({'status' : "Error! user with email `" + userEmail + "` doesn`t exist!"});
+		}
+	});
+};
+
+exports.isWatched = function(req,res) {
+	var userEmail = req.body.email;
+	var exhibit = req.body.exhibit;
+	var isWatched = false;
+
+	User.findOne({email: userEmail}, function(err,doc) {
+		// user already exists in db
+		console.log("doc exist! > " + doc);
+		if (doc !== null && doc !== undefined) {
+			doc.watched.forEach(function (d) {
+				if (d === exhibit && !isWatched) isWatched = true;
+			});
+			//mongoose.disconnect();
+			res.status(200).json({'status' : "OK" , 'watched' : isWatched});
 		}
 		else {
 			console.log("user with email `" + userEmail + "` doesn`t exist!");

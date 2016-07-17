@@ -24,6 +24,7 @@ app.post('/ws/saveUser', userAction.addUser);
 app.post('/ws/addLike', userAction.addLike);
 app.post('/ws/addWatched', userAction.addWatched);
 app.post('/ws/isLiked', userAction.isLiked);
+app.post('/ws/isWatched', userAction.isWatched);
 app.get('/xhibit/:specificExhibit', function(req,res) {
   var exhibit = req.params.specificExhibit;
   exhibitAction.getSpecific(exhibit,req,res);
