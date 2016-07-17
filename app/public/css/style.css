@@ -35,9 +35,11 @@ header, footer, main, section, nav, article, aside {
 }
 
 header {
-	background-image: url("../images/header2.png");
-	background-size: contain;
+	background: url("../images/header2.png") no-repeat;
+	//background-size: contain;
 	height:207px;
+	margin-top: 20px;	
+	margin:0 auto;
 }
 
 /*responsive menu*/
@@ -427,12 +429,14 @@ aside{
 }
 
 footer{
-	background: url("../images/footer2.png") no-repeat;
-	height:133px;
-	width:1131px;
-	background-image: contain;
-	bottom: 0px;
+	background: url("../images/footer.png") no-repeat;
 	position: fixed;
+	bottom:0px;
+	left:50%;
+	margin-left:-825px;	
+	height:204px;
+	width:1650px;
+	z-index:100;
 }
 
 /* breakpoint - wide screens */
