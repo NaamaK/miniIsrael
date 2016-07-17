@@ -14,7 +14,7 @@ exports.getSpecific = function(nameId,req,res) {
 	where('nameId').equals(nameId).
 	exec(function(err,docs) {
 		res.json(docs);
-		console.log(docs);
+		//console.log(docs);
 		return;
 	});
 };

@@ -43,6 +43,6 @@ var menu = 		'<div class="mobile-nav">'+
 	                '</ul>'+
 	            '</nav>';
 
-var signIn =	'<div id="gSignIn" onclick="signOut();"></div>'+
+var signIn =	'<div id="gSignIn"></div>'+
                 '<div class="userContent"></div>';
                 //'<a href="#" id="signOut" onclick="signOut();">Sign out</a>';

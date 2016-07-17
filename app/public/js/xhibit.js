@@ -20,7 +20,7 @@ app.config(function ($routeProvider, $locationProvider) {
         });
 });
 
-app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce) {
+app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce, $q) {
     $scope.requestedExhibit = $location.path().substring(13);
 
     $http.get('http://localhost:3000/xhibit/' + $scope.requestedExhibit).then(function(response){
@@ -51,14 +51,16 @@ app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce)
 
         $http.post('http://localhost:3000/ws/addLike', body).success(function (data, status, headers, config) {
             console.log("SUCCESS 200!");
+            $scope.getIfLiked();
         }).error(function (data, status, headers, config) {
             console.log("ERROR!!" + status);
-        });          
+        });         
     };
 
     $scope.getUser = function () {
         $scope.userName = $cookies.get('googleUser');
         $scope.userEmail = $cookies.get('googleEmail');
+        $scope.getIfLiked();
     };
 
     $scope.addUser = function () {
@@ -82,7 +84,40 @@ app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce)
     
     $scope.trustSrc = function(src) {
         return $sce.trustAsResourceUrl(src);
-      }
+    };
+
+    $scope.isLiked = function(exhibit) {
+        var defer = $q.defer();
+        var body = {
+            email: $scope.userEmail,
+            exhibit: exhibit
+        };
+
+        var config = {
+            headers : {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        $http.post('http://localhost:3000/ws/isLiked', body).success(function (data, status, headers, config) {
+            console.log("mail!: " + $scope.userEmail);
+            console.log("SUCCESS 200!");
+            defer.resolve(data.liked);
+            
+        }).error(function (data, status, headers, config) {
+            console.log("ERROR!!" + status);
+            window.data = data.liked;
+        });
+        return defer.promise;
+    };
+
+    $scope.getIfLiked = function() {
+        $scope.isLiked($scope.requestedExhibit).then(function(data) {
+            if (data) angular.element(document.getElementById('like')).css('background-image','url(images/heartEnabled.png)');
+            else angular.element(document.getElementById('like')).css('background-image','url(images/heartDisabled.png)');
+        });
+    };
+
 
 });
 

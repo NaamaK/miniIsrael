@@ -13,7 +13,7 @@
         <script src="/js/googleAuth.js"></script>
         <script src="/js/components.js"></script>
     </head>
-    <body ng-controller="exhibitCtrl" id="xhibitController">
+    <body ng-controller="exhibitCtrl" id="controller">
         <header>
             <a href="index.html" id="logo"></a> 
         </header>
@@ -36,7 +36,7 @@
                     </section>
                     <section class="xhibit-frame col-md-11 col-lg-11 col-md-offset-1 col-lg-offset-1" id="xvideo">
                         <iframe ng-src='{{trustSrc(exhibit.video)}}' allowfullscreen></iframe>
-                        <button id="like" ng-click="addLike(exhibit.nameId);image={'background-image':getImage()}" ng-style="image"></button>
+                        <button id="like" ng-click="addLike(exhibit.nameId)"></button>
                     </section>
                 </section>
             </main>

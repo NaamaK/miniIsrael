@@ -21,7 +21,7 @@ exports.addUser = function(req,res) {
 				else {
 					console.log("\nSaved::" + doc);
 					res.json();
-					mongoose.disconnect();
+					//mongoose.disconnect();
 				}
 			});
 		}
@@ -44,13 +44,13 @@ exports.addLike = function(req,res) {
 				doc.update({
 					$pull: {likes: likedExhibit}
 				}).exec(function(err, res) {
-					mongoose.disconnect();
+					//mongoose.disconnect();
 				});
 			}else{
 				doc.update({
 					$push: {likes: likedExhibit}
 				}).exec(function(err, res) {
-					mongoose.disconnect();
+					//mongoose.disconnect();
 				});
 			}
 			res.status(200).json({'status' : "OK"});
@@ -78,10 +78,33 @@ exports.addWatched = function(req,res) {
 				doc.update({
 					$push: {watched: watchedExhibit}
 				}).exec(function(err, res) {
-					mongoose.disconnect();
+					//mongoose.disconnect();
 				});
 			}
 			res.status(200).json({'status' : "OK"});
+		}
+		else {
+			console.log("user with email `" + userEmail + "` doesn`t exist!");
+			res.status(400).json({'status' : "Error! user with email `" + userEmail + "` doesn`t exist!"});
+		}
+	});
+};
+
+exports.isLiked = function(req,res) {
+	var userEmail = req.body.email;
+	var exhibit = req.body.exhibit;
+	var isLiked = false;
+	var check = "naama.kapach@gmail.com"===userEmail;
+	console.log("naama.kapach@gmail.com=? " + check);
+	User.findOne({email: userEmail}, function(err,doc) {
+		// user already exists in db
+		console.log("doc exist! > " + doc);
+		if (doc !== null && doc !== undefined) {
+			doc.likes.forEach(function (d) {
+				if (d === exhibit && !isLiked) isLiked = true;
+			});
+			//mongoose.disconnect();;
+			res.status(200).json({'status' : "OK" , 'liked' : isLiked});
 		}
 		else {
 			console.log("user with email `" + userEmail + "` doesn`t exist!");
