@@ -20,7 +20,7 @@ app.config(function ($routeProvider, $locationProvider) {
         });
 });
 
-app.controller('exhibitCtrl', function($scope, $http, $location, $cookies) {
+app.controller('exhibitCtrl', function($scope, $http, $location, $cookies, $sce) {
     $scope.requestedExhibit = $location.path().substring(13);
 
     $http.get('http://localhost:3000/xhibit/' + $scope.requestedExhibit).then(function(response){
@@ -79,6 +79,10 @@ app.controller('exhibitCtrl', function($scope, $http, $location, $cookies) {
             console.log("ERROR!!");
         });          
     };
+    
+    $scope.trustSrc = function(src) {
+        return $sce.trustAsResourceUrl(src);
+      }
 
 });
 
