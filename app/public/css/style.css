@@ -878,3 +878,10 @@ a:hover{
 .head a{float: right;}
 .profile img{width: 100px;float: left;margin: 0px 10px 10px 0px;}
 .proDetails{float: left;}
+
+.logOut{
+	background: url('../images/signOutGoogle.png') no-repeat;
+	background-size:contain;
+	width: 191px;
+	height: 46px;
+}
