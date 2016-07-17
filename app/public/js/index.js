@@ -72,4 +72,5 @@ app.controller('indexCtrl', function($scope, $http, $cookies) {
 	    	console.log("ERROR!!" + status);
 	    });          
     };
+
 });
